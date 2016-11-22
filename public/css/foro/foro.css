@@ -1,0 +1,20 @@
+.datos{
+	background-color: #DDDDDD;
+}
+
+.datos .header{
+	border: solid 1px white;
+}
+
+.datos p{
+	margin : 5px 0px;
+}
+
+.datos .nombre,
+.mensaje-contenido p{
+	margin-left: 20px;
+}
+
+.datos .folio{
+	margin-right: 20px;
+}

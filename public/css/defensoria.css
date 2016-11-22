@@ -1,0 +1,18 @@
+.cuadro-derecho{
+	height: 265px;
+	background-color: #FBEFF5;
+	margin-bottom: 30px;
+}
+
+.titulo{
+	padding-top:40px;
+	color: #A4A4A4;
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.cuerpo{
+	padding: 0 20px;
+	font-size: 13px;
+	font-weight: bold;
+}
