@@ -63,18 +63,11 @@
 					<div class="row">
 						<div class="col-xs-4 col-xs-offset-8 col-sm-offset-8 col-sm-offset-8 col-sm-4 col-md-offset-8 col-md-4 col-lg-offset-8 col-lg-4 text-right">
 							<!-- Large modal -->
-							<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Nueva Respuesta</button>
+							<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-response-modal-lg"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Nueva Respuesta</button>
 							<button type = "button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  Borrar Mensaje</button>
-
-							<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-								<div class="modal-dialog modal-lg" role="document">
-									<div class="modal-content">
-									...
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
+					<hr />
 					<div class="row">
 						<form action="">
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -102,6 +95,39 @@
 						</div>
 					</div>
                 </div>
+                {{-- Seccion del modal --}}
+                <div id="responseModal" class="modal fade bs-response-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title">Respuesta para: <strong>{{$mensaje->audiencia->nombre . " " . $mensaje->audiencia->apellido_paterno}}</strong></h4>
+							</div>
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+										<form id="newResponse" action="">
+											<div class="form-group">
+												<textarea  name="response" id="boxResponse" rows="10" class="form-control" style="width: 100%"></textarea>
+												<input type="hidden" name="token_message" value="{{$mensaje->id}}">
+												{{csrf_field()}}
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button id="saveResponse" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>  Guardar</button>
+								<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Enviar contestación</button>
+								<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar contestación</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{-- Fin de la seccion de modal --}}
 				@else
 				<div class="panel-body">
 					<div class="row">
@@ -115,4 +141,8 @@
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('script')
+<script src="{{ url('/js/defensora/respuestas.js') }}"></script>
 @endsection

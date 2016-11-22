@@ -55,6 +55,7 @@
                             <li><a href="{{ url('/login') }}">Autentificar</a></li>
                             {{--<li><a href="{{ url('/register') }}">Register</a></li>--}}
                         @else
+                            <li><a href="{{ url('/home') }}">Mensajes</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -87,5 +88,7 @@
     {{--<script src="/js/app.js"></script>--}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+
+    @yield('script')
 </body>
 </html>

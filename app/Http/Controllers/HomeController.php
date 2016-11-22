@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mensaje;
+use App\Defensora;
 
 class HomeController extends Controller
 {
@@ -40,5 +41,16 @@ class HomeController extends Controller
         }
 
         return view('auth.respuesta', ['mensaje' => $mensaje] );
+    }
+
+    public function newresponse( Request $request ){
+        $carbon = new \Carbon\Carbon();
+        $mensaje = Mensaje::find( $request->input('token_message') );
+
+        $defensora = new Defensora;
+        $defensora->respuesta = $request->input('response');
+        $defensora->fecha = $carbon->now();
+        $defensora->estado = 1;
+        $mensaje->defensoras()->save($defensora);
     }
 }

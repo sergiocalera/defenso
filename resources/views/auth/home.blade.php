@@ -22,7 +22,7 @@
                             <td>{{ $mensaje->id }}</td>
                             <td>{{ $mensaje->audiencia->nombre . " " . $mensaje->audiencia->apellido_paterno . " " . $mensaje->audiencia->apellido_materno }}</td>
                             <td>{{ $mensaje->fecha }}</td>
-                            <td><a class="btn btn-primary btn-sm" href="{{ url('/home/response/' . $mensaje->id) }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contestar</a></td>
+                            <td><a class="btn btn-primary btn-sm" href="{{ url('/home/response/' . $mensaje->id) }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Ver mensaje</a></td>
                         </tr>
                         @endforeach
                     </table>

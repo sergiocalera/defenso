@@ -28,3 +28,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/home/response/{id?}', 'HomeController@response');
+
+Route::post('/home/newresponse', 'HomeController@newresponse');
