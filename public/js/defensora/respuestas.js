@@ -1,7 +1,13 @@
 $(document).ready(function(){
-	$('#responseModal').on('hidden.bs.modal', function (e) {
+
+	$('#responseModalEdit').on('show.bs.modal', function (e) {
+		modalEditar(e);
+	});
+
+	$('#responseModal').on('show.bs.modal', function (e) {
 		$('#boxResponse').val("");
-	})
+	});
+
 
 	$('#saveResponse').click(function(){
 		console.log("Salvar mensaje");
@@ -9,6 +15,17 @@ $(document).ready(function(){
 		envio('/home/newresponse', 'html', dataResponse, function( data ){
 			console.log("Se mando la información mensaje del cliente");
 			console.log( data );
+			location.reload();
+		});
+	});
+
+	$('#saveResponseEdit').click(function(){
+		console.log('Editando mensaje');
+		var dataResponse = datos( $('#editResponse').find('input, textarea') );
+		envio('/home/editarresponse', 'html', dataResponse, function( data ){
+			console.log("Se mando la nueva edición");
+			console.log( data );
+			location.reload();
 		});
 	});
 });
@@ -21,9 +38,6 @@ var envio = function($url, $dataType, $data, funcion){
 		url: $url,
 		dataType: $dataType,
 		data: $data,
-		// beforeSend: function(data){
-		// 	$('#mensaje').html('Enviando datos...');
-		// },
 		success: function(data){
 			funcion();
 		},
@@ -32,7 +46,7 @@ var envio = function($url, $dataType, $data, funcion){
 			console.log(data.responseText);
 		}
 	}); 
-}
+};
 
 var datos = function( datos ){
 	var info = [];
@@ -40,4 +54,13 @@ var datos = function( datos ){
 		info.push( { name: $(this).attr('name'), value : $(this).val() } );
 	});
 	return info;
-}
+};
+
+var modalEditar = function(event){
+	var button =  $(event.relatedTarget);
+	var id = button.data('identification');
+	var mensaje = button.data('message');
+
+	$('#boxResponseEdit').val(mensaje);
+	$('#token_respuesta').attr('value', id);
+};

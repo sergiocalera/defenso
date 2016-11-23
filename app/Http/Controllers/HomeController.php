@@ -53,4 +53,13 @@ class HomeController extends Controller
         $defensora->estado = 1;
         $mensaje->defensoras()->save($defensora);
     }
+
+    public function editarresponse( Request $request ){
+        $carbon = new \Carbon\Carbon();
+        $defensora = Defensora::find( $request->input('token_respuesta') );
+        $defensora->respuesta = $request->response;
+        $defensora->fecha = $carbon->now();
+        $defensora->estado = 1;
+        $defensora->save();
+    }
 }
