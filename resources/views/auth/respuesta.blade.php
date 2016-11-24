@@ -86,13 +86,15 @@
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							{{-- Aqui vamos --}}
 							<?php $respuestas = $mensaje->defensoras ?>
+							<?php $cont = 0;?>
 							@foreach( $respuestas as $respuesta )
+							@if( $respuesta->estado != 3 )
 							<div class="mensaje thumbnail">
 								<div class="datos">
 									<div class="row">
 										<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 											<p class="text-left">
-												<strong>Folio: </strong> {{ $respuesta->id }}
+												<strong>Número: </strong> {{ ++$cont }}
 											</p>
 										</div>
 										<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -101,9 +103,15 @@
 											</p>
 										</div>
 										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
-											<button type="button" class="btn btn-default modify" data-toggle="modal" data-target=".bs-edit-modal-lg" data-identification="{{ $respuesta->id }}" data-message="{{ $respuesta->respuesta }}" ><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modificar</button>
-											<button type="button" class="btn btn-warning" ><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Publicar</button>
-											<button type="button" class="btn btn-danger" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</button>
+											<button type="button" class="btn btn-default modify" data-toggle="modal" data-target=".bs-edit-modal-lg" data-identification="{{ $respuesta->id }}" data-message="{{ $respuesta->respuesta }}" >
+												<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modificar
+											</button>
+											<button type="button" class="publish-response btn btn-{{ $respuesta->estado == 1 ? 'warning' : 'success' }}" data-identification="{{ $respuesta->id }}" >
+												<span class="glyphicon glyphicon-file" aria-hidden="true"></span> Publicar
+											</button>
+											<button type="button" class="delete-response btn btn-danger" data-identification="{{ $respuesta->id }}">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar
+											</button>
 										</div>
 									</div>
 									<hr />
@@ -118,6 +126,7 @@
 									</div>
 								</div>
 							</div>
+							@endif
 							@endforeach
 						</div>
 					</div>

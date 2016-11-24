@@ -32,7 +32,7 @@ $(document).ready(function(){
 		var aux = [];
 		aux.push( { name: 'message' , value : id } );
 		aux.push( { name: $('#accionesBotones input').attr('name') , value: $('#accionesBotones input').attr('value') } );
-		envio('/home/deleteresponse', 'html', aux, function( data ){
+		envio('/home/deletemessage', 'html', aux, function( data ){
 			location.reload();
 		});
 	});
@@ -46,6 +46,26 @@ $(document).ready(function(){
 			location.reload();
 		});
 	});
+
+	$('.publish-response').click(function(){
+		var id = $(this).attr('data-identification');
+		var aux = [];
+		aux.push( { name: 'message', value: id } );
+		aux.push( { name: $('#accionesBotones input').attr('name'), value: $('#accionesBotones input').attr('value') } );
+		envio('/home/publish', 'html', aux, function(data){
+			location.reload();
+		});
+	});
+
+	$('.delete-response').click( function(){
+		var id = $(this).attr('data-identification');
+		var aux = [];
+		aux.push( { name: 'message', value: id } );
+		aux.push( { name: $('#accionesBotones input').attr('name'), value: $('#accionesBotones input').attr('value') } );
+		envio('/home/deleteresponse', 'html', aux, function(data){
+			location.reload();
+		});
+	} );
 });
 
 

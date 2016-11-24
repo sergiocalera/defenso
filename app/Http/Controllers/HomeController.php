@@ -51,7 +51,7 @@ class HomeController extends Controller
         $defensora = new Defensora;
         $defensora->respuesta = $request->input('response');
         $defensora->fecha = $carbon->now();
-        $defensora->estado = 1;
+        $defensora->estado = true;
         $mensaje->defensoras()->save($defensora);
     }
 
@@ -72,8 +72,6 @@ class HomeController extends Controller
     }
 
     public function aprobarmensaje( Request $request ){
-        $carbon = new \Carbon\Carbon();
-
         $mensaje = Mensaje::find( $request->input('message') );
         $mensaje->aprobado = true;
         $mensaje->save();
@@ -81,5 +79,17 @@ class HomeController extends Controller
         $aprobada = new Aprobada;
 
         $mensaje->aprobada()->save( $aprobada );
+    }
+
+    public function publishmessage( Request $request ){
+        $defensora = Defensora::find( $request->input('message') );
+        $defensora->estado = 2;
+        $defensora->save();
+    }
+
+    public function deleteresponse( Request $request ){
+        $defensora = Defensora::find( $request->input('message') );
+        $defensora->estado = 3;
+        $defensora->save();
     }
 }

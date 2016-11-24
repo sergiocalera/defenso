@@ -33,6 +33,10 @@ Route::post('/home/newresponse', 'HomeController@newresponse');
 
 Route::post('/home/editarresponse', 'HomeController@editarresponse');
 
-Route::post('/home/deleteresponse', 'HomeController@borrarmensaje');
+Route::post('/home/deletemessage', 'HomeController@borrarmensaje');
 
 Route::post('/home/approveresponse', 'HomeController@aprobarmensaje');
+
+Route::post('/home/publish', 'HomeController@publishmessage');
+
+Route::post('/home/deleteresponse', 'HomeController@deleteresponse');
