@@ -51,7 +51,7 @@ class HomeController extends Controller
         $defensora = new Defensora;
         $defensora->respuesta = $request->input('response');
         $defensora->fecha = $carbon->now();
-        $defensora->estado = true;
+        $defensora->estado = 1;
         $mensaje->defensoras()->save($defensora);
     }
 
@@ -60,7 +60,7 @@ class HomeController extends Controller
         $defensora = Defensora::find( $request->input('token_respuesta') );
         $defensora->respuesta = $request->response;
         $defensora->fecha = $carbon->now();
-        $defensora->estado = 1;
+        // $defensora->estado = 1;
         $defensora->save();
     }
 

@@ -67,14 +67,14 @@
 					<div class="row">
 						<div class="col-xs-4 col-xs-offset-8 col-sm-offset-8 col-sm-offset-8 col-sm-4 col-md-offset-8 col-md-4 col-lg-offset-8 col-lg-4 text-right">
 							@if( $mensaje->estado )
-							@if( $mensaje->aprobado )
-							<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-response-modal-lg">
-								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Nueva Respuesta
-							</button>
-							@else
-							<button id="approveMessage" data-identi="{{$mensaje->id}}" type="button" class="btn btn-warning"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> Aprobar</button>
-							@endif
-							<button id="deleteMessage" data-identi="{{$mensaje->id}}" type = "button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  Borrar Mensaje</button>
+								@if( $mensaje->aprobado )
+								<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-response-modal-lg">
+									<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Nueva Respuesta
+								</button>
+								@else
+								<button id="approveMessage" data-identi="{{$mensaje->id}}" type="button" class="btn btn-warning"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> Aprobar</button>
+								<button id="deleteMessage" data-identi="{{$mensaje->id}}" type = "button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  Borrar Mensaje</button>
+								@endif
 							@endif
 						</div>
 					</div>
@@ -109,9 +109,11 @@
 											<button type="button" class="publish-response btn btn-{{ $respuesta->estado == 1 ? 'warning' : 'success' }}" data-identification="{{ $respuesta->id }}" >
 												<span class="glyphicon glyphicon-file" aria-hidden="true"></span> Publicar
 											</button>
+											@if( $respuesta->estado !=2 )
 											<button type="button" class="delete-response btn btn-danger" data-identification="{{ $respuesta->id }}">
 												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar
 											</button>
+											@endif
 										</div>
 									</div>
 									<hr />
