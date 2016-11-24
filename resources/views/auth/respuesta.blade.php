@@ -12,7 +12,11 @@
                 <div class="panel-body">
 					<div class="row">
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<strong>Folio: </strong>{{ $mensaje->id }}
+							@if( $mensaje->aprobado )
+							<strong>Folio: </strong>{{ $mensaje->aprobada->id }}
+							@else
+							<strong>Folio: </strong> No Aprobado
+							@endif
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 							<strong>Fecha: </strong>{{$mensaje->fecha}}
@@ -62,12 +66,23 @@
 					<hr/>
 					<div class="row">
 						<div class="col-xs-4 col-xs-offset-8 col-sm-offset-8 col-sm-offset-8 col-sm-4 col-md-offset-8 col-md-4 col-lg-offset-8 col-lg-4 text-right">
-							<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-response-modal-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Nueva Respuesta</button>
-							<button type = "button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  Borrar Mensaje</button>
+							@if( $mensaje->estado )
+							@if( $mensaje->aprobado )
+							<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-response-modal-lg">
+								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Nueva Respuesta
+							</button>
+							@else
+							<button id="approveMessage" data-identi="{{$mensaje->id}}" type="button" class="btn btn-warning"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> Aprobar</button>
+							@endif
+							<button id="deleteMessage" data-identi="{{$mensaje->id}}" type = "button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  Borrar Mensaje</button>
+							@endif
 						</div>
 					</div>
 					<hr />
 					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+							<h3>Respuestas</h3>
+						</div>
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							{{-- Aqui vamos --}}
 							<?php $respuestas = $mensaje->defensoras ?>
@@ -191,6 +206,9 @@
 						</div>
 					</div>
 				</div>
+				<form id="accionesBotones">
+					{{csrf_field()}}
+				</form>
 				{{-- Fin de la seccion de modal --}}
 				@else
 				<div class="panel-body">

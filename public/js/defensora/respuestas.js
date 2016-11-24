@@ -23,8 +23,26 @@ $(document).ready(function(){
 		console.log('Editando mensaje');
 		var dataResponse = datos( $('#editResponse').find('input, textarea') );
 		envio('/home/editarresponse', 'html', dataResponse, function( data ){
-			console.log("Se mando la nueva edición");
-			console.log( data );
+			location.reload();
+		});
+	});
+
+	$('#deleteMessage').click( function(){
+		var id = $(this).attr('data-identi');
+		var aux = [];
+		aux.push( { name: 'message' , value : id } );
+		aux.push( { name: $('#accionesBotones input').attr('name') , value: $('#accionesBotones input').attr('value') } );
+		envio('/home/deleteresponse', 'html', aux, function( data ){
+			location.reload();
+		});
+	});
+
+	$('#approveMessage').click( function(){
+		var id = $(this).attr('data-identi');
+		var aux = [];
+		aux.push( { name: 'message' , value : id } );
+		aux.push( { name: $('#accionesBotones input').attr('name') , value: $('#accionesBotones input').attr('value') } );
+		envio('/home/approveresponse', 'html', aux, function( data ){
 			location.reload();
 		});
 	});

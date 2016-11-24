@@ -20,6 +20,7 @@ class CreateMensajesTable extends Migration
             $table->string('motivo_mensaje');
             // estado = true: guardado false: borrado 
             $table->boolean('estado')->default(true);
+            $table->boolean('aprobado')->default(false);
             $table->date('fecha');
             $table->integer('audiencia_id')->unsigned();
             $table->foreign('audiencia_id')

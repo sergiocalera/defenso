@@ -31,4 +31,8 @@ Route::get('/home/response/{id?}', 'HomeController@response');
 
 Route::post('/home/newresponse', 'HomeController@newresponse');
 
-Route::post('home/editarresponse', 'HomeController@editarresponse');
+Route::post('/home/editarresponse', 'HomeController@editarresponse');
+
+Route::post('/home/deleteresponse', 'HomeController@borrarmensaje');
+
+Route::post('/home/approveresponse', 'HomeController@aprobarmensaje');

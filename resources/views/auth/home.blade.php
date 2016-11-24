@@ -18,7 +18,11 @@
                             <th>Control</th>
                         </tr>
                         @foreach( $mensajes as $mensaje )
+                        @if( $mensaje->estado == false )
+                        <tr class="danger">
+                        @else
                         <tr class="{{ $mensaje->respuesta == true ? 'success' : 'warning' }}">
+                        @endif
                             <td>{{ $mensaje->id }}</td>
                             <td>{{ $mensaje->audiencia->nombre . " " . $mensaje->audiencia->apellido_paterno . " " . $mensaje->audiencia->apellido_materno }}</td>
                             <td>{{ $mensaje->fecha }}</td>

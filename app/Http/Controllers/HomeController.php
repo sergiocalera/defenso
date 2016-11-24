@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mensaje;
 use App\Defensora;
+use App\Aprobada;
 
 class HomeController extends Controller
 {
@@ -61,5 +62,24 @@ class HomeController extends Controller
         $defensora->fecha = $carbon->now();
         $defensora->estado = 1;
         $defensora->save();
+    }
+
+    public function borrarmensaje( Request $request ){
+        $mensaje = Mensaje::find( $request->input('message') );
+        $mensaje->aprobado = false;
+        $mensaje->estado = false;
+        $mensaje->save();
+    }
+
+    public function aprobarmensaje( Request $request ){
+        $carbon = new \Carbon\Carbon();
+
+        $mensaje = Mensaje::find( $request->input('message') );
+        $mensaje->aprobado = true;
+        $mensaje->save();
+
+        $aprobada = new Aprobada;
+
+        $mensaje->aprobada()->save( $aprobada );
     }
 }
