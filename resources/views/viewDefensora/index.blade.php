@@ -5,7 +5,8 @@
 @endsection
 
 @section('bodyTemplate')
-@include('viewDefensoria.acerca')
+@include('viewDefensora.banner')
+@include('viewDefensora.acerca')
 @endsection
 
 @section('footerTemplate')
