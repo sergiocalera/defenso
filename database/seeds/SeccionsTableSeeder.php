@@ -15,30 +15,43 @@ class SeccionsTableSeeder extends Seeder
         	'posicion' => 3,
         	'nombre' => 'defensoria',
         	'titulo' => '¿Qué es la Defensoría de las Audiencias?',
-        	'url' = > '/defensoria'
+        	'url' => '/defensoria'
     	]);
 
     	DB::table('seccions')->insert([
         	'posicion' => 4,
         	'nombre' => 'derechos',
         	'titulo' => 'Derechos de las Audiencias',
-        	'url' = > '/derechos'
+        	'url' => '/derechos'
     	]);
 
     	DB::table('seccions')->insert([
-        	'posicion' => 4,
+        	'posicion' => 5,
         	'nombre' => 'defensora',
         	'titulo' => '¿Quién es la Defensora?',
-        	'url' = > '/defensora'
+        	'url' => '/defensora'
     	]);
-    	
+        
+        DB::table('seccions')->insert([
+            'posicion' => 6,
+            'nombre' => 'formulario',
+            'titulo' => 'Formulario',
+            'url' => '/formulario'
+        ]);
+        
+        DB::table('seccions')->insert([
+            'posicion' => 7,
+            'nombre' => 'interes',
+            'titulo' => 'Temas de Interés',
+            'url' => '/temas-interes'
+        ]);
+        
     	DB::table('seccions')->insert([
-        	'posicion' => 4,
-        	'nombre' => 'defensora',
-        	'titulo' => '¿Quién es la Defensora?',
-        	'url' = > '/defensora'
+        	'posicion' => 8,
+        	'nombre' => 'normatividad',
+        	'titulo' => 'Normatividad',
+        	'url' => '/normatividad'
     	]);
-
 
     }
 }
