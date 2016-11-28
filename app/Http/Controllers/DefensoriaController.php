@@ -42,11 +42,24 @@ class DefensoriaController extends Controller
     }
 
     public function formulario(){
-        return view('viewFormulario.index');
+        $aprobadas = Aprobada::orderBy('id', 'desc')->paginate(4);
+        return view('viewFormulario.index', ['aprobadas' => $aprobadas]);
     }
 
     public function normatividad(){
-        return view('viewNormatividad.index');
+        $documents = collect([
+            ['name' => 'Ley del Sistema Público de Radiodifusión del Estado Mexicano.',
+             'url' => '/docs/normatividad/ley_sistema_radiodifusion.pdf'], 
+            ['name' => 'Lineamientos Generales sobre los Derechos de las Audiencias.', 
+             'url' => '/docs/normatividad/lineamientos_derechos_audiencias.pdf'],
+            ['name' => 'Ley Federal de Telecomunicaciones y Radiodifusión.',
+             'url' => '/docs/normatividad/ley_federal_telecomunicaciones.pdf'],
+            ['name' => 'Ley Reglamentaria del Derecho de Réplica.',
+             'url' => 'docs/normatividad/ley_derecho_replica.pdf'],
+            ['name' => 'Lineamientos de Clasificación de Contenidos Audiovisuales de las Transmisiones Radiodifundidas y del Servicio de Televisión y Audio Restringidos.',
+             'url' => 'docs/normatividad/lineamientos_contenidos_audiovisuales.pdf']
+        ]);
+        return view('viewNormatividad.index', ['documents' => $documents]);
     }
 
     public function foro(){

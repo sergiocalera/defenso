@@ -10,11 +10,11 @@
                     Los datos marcados como obligatorios, con un asterisco, son necesarios para poder entrar en contacto con usted. Sin embargo lo invitamos a llenar todas las casillas, as&iacute; usted nos brinda informaci&oacute;n valiosa para construir el perfil de nuestras audiencias. Una vez que termine de llenar las variables, no olvide darle clic al bot&oacute;n <strong>Enviar</strong>.
                 </p>
                 <p>
-                    *Los campos con (*) son obligatorios.
+                    *Los campos con (<spand style="color: #D0021B;">*</spand>) son obligatorios.
                 </p>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-nombre">
-                        <label for="nombre" id="label-nombre">Nombre:*</label>
+                        <label for="nombre" id="label-nombre">Nombre: <spand style="color: #D0021B;">*</spand></label>
                         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" maxlength="50" />
                     </div>
                     <div id="mensaje-nombre"></div>
@@ -22,21 +22,21 @@
                 
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-apaterno">
-                        <label for="apaterno">Apellido paterno:*</label>
+                        <label for="apaterno">Apellido paterno: <spand style="color: #D0021B;">*</spand></label>
                         <input type="text" class="form-control" id="apaterno" name="apaterno" placeholder="Apellido paterno" maxlength="50" />
                     </div>
                     <div id="mensaje-apaterno"></div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-amaterno">
-                        <label for="amaterno">Apellido materno:*</label>
+                        <label for="amaterno">Apellido materno:</label>
                         <input type="text" class="form-control" id="amaterno" name="amaterno" placeholder="Apellido materno" />
                     </div>
                     <div id="mensaje-materno"></div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                     <div class="form-group" id="form-edad">
-                        <label for="amaterno">Edad:*</label>
+                        <label for="amaterno">Edad: <spand style="color: #D0021B;">*</spand></label>
                         <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad" min="10" max="99" />
                     </div>
                     <div id="mensaje-materno"></div>
@@ -44,7 +44,7 @@
                 
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-ocupacion">
-                        <label for="ocupacion">Ocupaci&oacute;n:*</label>
+                        <label for="ocupacion">Ocupaci&oacute;n:</label>
                         <select class="form-control" id="ocupacion" name="ocupacion">
                             <option selected value="">Selecciona una opci&oacute;n</option>
                             <option value="Otro">Otro</option>
@@ -121,58 +121,25 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-pais">
-                        <label for="pais">Pa&iacute;s:*</label>
-                        <select class="form-control" id="pais" name="pais">
-                            <option selected value="">Selecciona una opci&oacute;n</option>
-                            <option value="Mexico">M&eacute;xico</option>
-                        </select>
+                        <label for="pais">Pa&iacute;s: <spand style="color: #D0021B;">*</spand></label>
+                        <input type="text" class="form-control" id="pais" name="pais" placeholder="Escribe el nombre de tu país" />
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-estado">
-                        <label for="estado">Entidad federativa:*</label>
-                        <select class="form-control" id="estado" name="estado" disabled="disabled">
-                            <option value="" selected>Seleccione una opci&oacute;n</option>
-                            <option value="AGUASCALIENTES">AGUASCALIENTES</option>
-                            <option value="BAJA CALIFORNIA">BAJA CALIFORNIA</option>
-                            <option value="BAJA CALIFORNIA SUR">BAJA CALIFORNIA SUR</option>
-                            <option value="CAMPECHE">CAMPECHE</option>
-                            <option value="COAHUILA DE ZARAGOZA">COAHUILA DE ZARAGOZA</option>
-                            <option value="COLIMA">COLIMA</option>
-                            <option value="CHIAPAS">CHIAPAS</option>
-                            <option value="CHIHUAHUA">CHIHUAHUA</option>
-                            <option value="CIUDAD DE MEXICO">CIUDAD DE MEXICO</option>
-                            <option value="DURANGO">DURANGO</option>
-                            <option value="GUANAJUATO">GUANAJUATO</option>
-                            <option value="GUERRERO">GUERRERO</option>
-                            <option value="HIDALGO">HIDALGO</option>
-                            <option value="JALISCO">JALISCO</option>
-                            <option value="MEXICO">MEXICO</option>
-                            <option value="MICHOACAN DE OCAMPO">MICHOACAN DE OCAMPO</option>
-                            <option value="MORELOS">MORELOS</option>
-                            <option value="NAYARIT">NAYARIT</option>
-                            <option value="NUEVO LEON">NUEVO LEON</option>
-                            <option value="OAXACA">OAXACA</option>
-                            <option value="PUEBLA">PUEBLA</option>
-                            <option value="QUERETARO DE ARTEAGA">QUERETARO DE ARTEAGA</option>
-                            <option value="QUINTANA ROO">QUINTANA ROO</option>
-                            <option value="SAN LUIS POTOSI">SAN LUIS POTOSI</option>
-                            <option value="SINALOA">SINALOA</option>
-                            <option value="TLAXCALA">TLAXCALA</option>
-                        </select>
+                        <label for="estado">Estado: <spand style="color: #D0021B;">*</spand></label>
+                        <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" />
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-delegacion">
-                        <label for="delegacion">Municipio:*</label>
-                        <select class="form-control" id="delegacion" name="delegacion" disabled="disabled">
-                            <option selected value="">Selecciona una opci&oacute;n</option>
-                        </select>
+                        <label for="delegacion">Municipio:</label>
+                        <input type="text" class="form-control" id="delegacion" name="delegacion" placeholder="Municipio" />
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 renglon">
                     <div class="form-group" id="form-correo">
-                        <label for="correo">Correo electr&oacute;nico:*</label>
+                        <label for="correo">Correo electr&oacute;nico: <spand style="color: #D0021B;">*</spand></label>
                         <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electr&oacute;nico" />
                     </div>
                     <div id="mensaje-correo"></div>
@@ -202,13 +169,13 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 renglon">
                     <div class="form-group" id="form-mmensaje">
-                        <label for="mmensaje">Mensaje:*</label>
+                        <label for="mmensaje">Mensaje: <spand style="color: #D0021B;">*</spand></label>
                         <textarea class="form-control" rows="3" id="mmensaje" name="mmensaje"></textarea>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group" id="anonimo">
-                        <label>AUTORIZO LA MENCIÓN DE MI NOMBRE Y APELLIDO EN LA PUBLICACIÓN DE ESTE MENSAJE:*</label>
+                        <label>AUTORIZO LA MENCIÓN DE MI NOMBRE Y APELLIDO EN LA PUBLICACIÓN DE ESTE MENSAJE:&nbsp;<spand style="color: #D0021B;">*</spand></label>
                         <label for="anonimo-si">SI: </label>
                         <input type="radio" name="anonimo" value="si">
                         <label for="anonimo-no">NO: </label>
@@ -216,7 +183,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 renglon">
-                    <button class="btn btn-default center-block" id="btn" type="button">Enviar</button>
+                    <button class="btn btn-default center-block" id="btn" type="submit">Enviar</button>
                 </div>
             </div>
             <div id="mensaje" class="renglon"></div>
