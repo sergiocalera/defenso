@@ -6,10 +6,13 @@ $gmx(document).ready(function(){
 
 var validar = function(e, formulario){
 	e.preventDefault();
-	console.log("se va a mandar el mensaje del usuario");
 	$elementos = formulario.serializeArray();
 	console.log( $elementos );
-
+	if( validar( $elementos ) ){
+		enviar( '/mensaje', 'html' );
+	} else{
+		console.log("no paso la validacioón);
+	}
 };
 
 var enviar = function($url, $dataType, $data, funcion){
@@ -28,3 +31,10 @@ var enviar = function($url, $dataType, $data, funcion){
 		}
 	}); 
 };
+
+var validar = function(datos){
+	var bandera = false;
+
+	return bandera;M
+
+}
