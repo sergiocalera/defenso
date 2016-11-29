@@ -14,29 +14,29 @@
                 </p>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-nombre">
-                        <label for="nombre" id="label-nombre">Nombre: <spand style="color: #D0021B;">*</spand></label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" maxlength="50" />
+                        <label class="control-label" for="nombre" id="label-nombre">Nombre: <spand style="color: #D0021B;">*</spand></label>
+                        <input title="Se requiere de un nombre" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" maxlength="50"/>
                     </div>
                     <div id="mensaje-nombre"></div>
                 </div>
                 
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-apaterno">
-                        <label for="apaterno">Apellido paterno: <spand style="color: #D0021B;">*</spand></label>
+                        <label class="control-label" for="apaterno">Apellido paterno: <spand style="color: #D0021B;">*</spand></label>
                         <input type="text" class="form-control" id="apaterno" name="apaterno" placeholder="Apellido paterno" maxlength="50" />
                     </div>
                     <div id="mensaje-apaterno"></div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-amaterno">
-                        <label for="amaterno">Apellido materno:</label>
+                        <label class="control-label" for="amaterno">Apellido materno:</label>
                         <input type="text" class="form-control" id="amaterno" name="amaterno" placeholder="Apellido materno" />
                     </div>
                     <div id="mensaje-materno"></div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                     <div class="form-group" id="form-edad">
-                        <label for="amaterno">Edad: <spand style="color: #D0021B;">*</spand></label>
+                        <label class="control-label" for="amaterno">Edad: <spand style="color: #D0021B;">*</spand></label>
                         <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad" min="10" max="99" />
                     </div>
                     <div id="mensaje-materno"></div>
@@ -44,7 +44,7 @@
                 
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-ocupacion">
-                        <label for="ocupacion">Ocupaci&oacute;n:</label>
+                        <label class="control-label" for="ocupacion">Ocupaci&oacute;n:</label>
                         <select class="form-control" id="ocupacion" name="ocupacion">
                             <option selected value="">Selecciona una opci&oacute;n</option>
                             <option value="Otro">Otro</option>
@@ -121,32 +121,32 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-pais">
-                        <label for="pais">Pa&iacute;s: <spand style="color: #D0021B;">*</spand></label>
+                        <label class="control-label" for="pais">Pa&iacute;s: <spand style="color: #D0021B;">*</spand></label>
                         <input type="text" class="form-control" id="pais" name="pais" placeholder="Escribe el nombre de tu país" />
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-estado">
-                        <label for="estado">Estado: <spand style="color: #D0021B;">*</spand></label>
+                        <label class="control-label" for="estado">Estado: <spand style="color: #D0021B;">*</spand></label>
                         <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" />
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-delegacion">
-                        <label for="delegacion">Municipio:</label>
+                        <label class="control-label" for="delegacion">Municipio:</label>
                         <input type="text" class="form-control" id="delegacion" name="delegacion" placeholder="Municipio" />
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 renglon">
                     <div class="form-group" id="form-correo">
-                        <label for="correo">Correo electr&oacute;nico: <spand style="color: #D0021B;">*</spand></label>
+                        <label class="control-label" for="correo">Correo electr&oacute;nico: <spand style="color: #D0021B;">*</spand></label>
                         <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electr&oacute;nico" />
                     </div>
                     <div id="mensaje-correo"></div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 renglon">
                     <p>
-                        <label>Motivo del mensaje</label>
+                        <label class="control-label" for="motivoMensaje">Motivo del mensaje</label>
                     </p>
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                         <input type="radio" name="motivo[]" id="felicitaci&oacute;n" value="Felicitaci&oacute;n"/> Felicitaci&oacute;n
@@ -169,17 +169,16 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 renglon">
                     <div class="form-group" id="form-mmensaje">
-                        <label for="mmensaje">Mensaje: <spand style="color: #D0021B;">*</spand></label>
-                        <textarea class="form-control" rows="3" id="mmensaje" name="mmensaje"></textarea>
+                        <label class="control-label" for="mmensaje">Mensaje: <spand style="color: #D0021B;">*</spand></label>
+                        <textarea class="form-control" rows="3" id="mmensaje" name="mmensaje" onkeydown="longitud()" onkeyup="longitud()"></textarea>
+                        <p>Total de Caracteres: <spand id="total_caracteres"></spand> </p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group" id="anonimo">
-                        <label>AUTORIZO LA MENCIÓN DE MI NOMBRE Y APELLIDO EN LA PUBLICACIÓN DE ESTE MENSAJE:&nbsp;<spand style="color: #D0021B;">*</spand></label>
-                        <label for="anonimo-si">SI: </label>
-                        <input type="radio" name="anonimo" value="si">
-                        <label for="anonimo-no">NO: </label>
-                        <input type="radio" name="anonimo" value="no">
+                        <label class="control-label" for="autorizarMencion">AUTORIZO LA MENCIÓN DE MI NOMBRE Y APELLIDO EN LA PUBLICACIÓN DE ESTE MENSAJE:&nbsp;<spand style="color: #D0021B;">*</spand></label>
+                        <label for="anonimo-si">SI: <input type="radio" name="anonimo" value="si" checked> </label>
+                        <label for="anonimo-no">NO: <input type="radio" name="anonimo" value="no"> </label>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 renglon">
