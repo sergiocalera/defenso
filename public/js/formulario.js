@@ -1,3 +1,5 @@
+var comentario_texto = "";
+
 $gmx(document).ready(function(){
 	$('#form-data').submit( function( event ){
 		validar( event, $(this) );
@@ -72,9 +74,24 @@ var revisarElemento = function( elem ){
 };
 
 var longitud = function(){
+	var maximo_c = 200;
 	var num_caracteres = document.forms[0].mmensaje.value.length;
-	$('#total_caracteres').html(num_caracteres);
-	console.log('Se tecleo una tecla' + num_caracteres);
+
+	$('#total_caracteres').html( maximo_c - num_caracteres );
+	if( num_caracteres > maximo_c ){
+		$('#mmensaje').val( comentario_texto );
+	} else{
+		comentario_texto = $('#mmensaje').val();
+	}
+
+	if( num_caracteres >= maximo_c ){
+		$('#mmensaje').css('color', '#D0021B');
+		console.log("cambio de color");
+	}
+	else{
+		$('#mmensaje').css('color', '#545454');
+	}
+
 }
 
 

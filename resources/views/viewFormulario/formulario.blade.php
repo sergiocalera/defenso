@@ -171,7 +171,7 @@
                     <div class="form-group" id="form-mmensaje">
                         <label class="control-label" for="mmensaje">Mensaje: <spand style="color: #D0021B;">*</spand></label>
                         <textarea class="form-control" rows="3" id="mmensaje" name="mmensaje" onkeydown="longitud()" onkeyup="longitud()"></textarea>
-                        <p>Total de Caracteres: <spand id="total_caracteres"></spand> </p>
+                        <p class="text-right" style="margin-top: 1%;">Caracteres restantes: <spand id="total_caracteres">200</spand></p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

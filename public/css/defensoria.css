@@ -2,10 +2,10 @@
 	height: 265px;
 	background-color: #FBEFF5;
 	margin-bottom: 30px;
+	padding: 0 5%;
 }
 
 .titulo{
-	padding-top:40px;
 	color: #A4A4A4;
 	font-weight: bold;
 	font-size: 28px;
@@ -15,4 +15,31 @@
 	padding: 0 20px;
 	font-size: 13px;
 	font-weight: bold;
+}
+
+.delimitador{
+    width:100%;
+    margin-top: 10%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.contenedor{
+    height:0px;
+    width:100%;
+    /*Cambio de la proporcioón de la altura*/
+    padding-top:75%;
+    position:relative;
+}
+.contenedor iframe,
+.contenedor .cuadro-derecho{
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0px;
+    left:0px;
+}
+
+table{
+	height: 100%;
+	width: 100%;
 }

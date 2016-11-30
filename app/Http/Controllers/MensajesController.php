@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Audiencia;
 use App\Mensaje;
 
-class MensajesController extends Controller
-{
+class MensajesController extends Controller{
+
     public function nuevo(Request $request){
     	if($request->isMethod("post") && $request->has("correo")){
     		$au = new Audiencia;
@@ -26,12 +26,10 @@ class MensajesController extends Controller
     		$m = new Mensaje;
     		$m->mensaje = $request->mmensaje;
     		$m->publico = ($request->anonimo == "si") ? true : false;
-            $m->motivo_mensaje = $request->motivo[0];
+            $m->motivo_mensaje = ($request->motivo[0] == null ) ? "Comentario" : $request->motivo[0];
     		$m->estado = true;
             $m->fecha = $carbon->now();
     		$au->mensajes()->save($m);
-
-            
     	}
     }
 }

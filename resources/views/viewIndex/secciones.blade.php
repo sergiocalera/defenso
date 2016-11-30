@@ -6,18 +6,23 @@
 			<hr class="red" />
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" style="margin-bottom: 5%;">
 		@foreach ($secciones as $seccion)
 		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			<a href="{{ url( $seccion->url ) }}" target="_self">
-				<article class="cuadro-derecho">
-					<header>
-						<p class="text-center titulo">{{ $seccion->titulo }}</p>
-					</header>
-					<section>
-						<p class="text-justify cuerpo">{{ $seccion->url }}</p>
-					</section>
-				</article>
+			<a href="{{ url( $seccion->url ) }}" target="_self" style="text-decoration: none;">
+				<div class="delimitador">
+					<div class="contenedor">
+						<div class="cuadro-derecho">
+							<table>
+								<tr>
+									<td style="vertical-align:middle;">
+										<p class="titulo text-center">{{ $seccion->titulo }}</p>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
 			</a>
 		</div>
 		@endforeach

@@ -17,7 +17,7 @@ class CreateMensajesTable extends Migration
             $table->increments('id');
             $table->string('mensaje');
             $table->boolean('publico');
-            $table->string('motivo_mensaje');
+            $table->string('motivo_mensaje')->default('Comentario');
             // estado = true: guardado false: borrado 
             $table->boolean('estado')->default(true);
             $table->boolean('aprobado')->default(false);
