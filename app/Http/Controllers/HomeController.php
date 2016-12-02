@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Mensaje;
 use App\Defensora;
 use App\Aprobada;
+use App\User;
+
+use Auth;
 
 class HomeController extends Controller
 {
@@ -76,9 +79,14 @@ class HomeController extends Controller
         $mensaje->aprobado = true;
         $mensaje->save();
 
+        $user_ge = Auth::user();
+        $user_id = $user_ge->id;
+        $user = User::find( $user_id );
+
         $aprobada = new Aprobada;
 
         $mensaje->aprobada()->save( $aprobada );
+        $user->aprobadas()->save( $aprobada );
     }
 
     public function publishmessage( Request $request ){

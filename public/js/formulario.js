@@ -38,7 +38,8 @@ var enviar = function($url, $dataType, $data, funcion){
 };
 
 var revisar = function( formulario ){
-	var bandera = false;
+	var bandera = true;
+	var revision = [];
 	var elementos = formulario.find("input, textarea");
 	for (var i = elementos.length - 1; i >= 0; i--) {
 		var aux = $(elementos[i]).attr('name');
@@ -51,13 +52,12 @@ var revisar = function( formulario ){
 			case 'correo' :
 			case 'mmensaje' :
 				if( !revisarElemento( $(elementos[i]) ) ){
-					break;
+					bandera = false;
 				}
 			break;
 		}
 	}
-	// return bandera;
-	return false;
+	return bandera;
 };
 
 var revisarElemento = function( elem ){
@@ -86,7 +86,7 @@ var longitud = function(){
 
 	if( num_caracteres >= maximo_c ){
 		$('#mmensaje').css('color', '#D0021B');
-		console.log("cambio de color");
+
 	}
 	else{
 		$('#mmensaje').css('color', '#545454');

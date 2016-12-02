@@ -12,7 +12,7 @@
 			<a href="{{ url( $seccion->url ) }}" target="_self" style="text-decoration: none;">
 				<div class="delimitador">
 					<div class="contenedor">
-						<div class="cuadro-derecho">
+						<div class="cuadro-menu">
 							<table>
 								<tr>
 									<td style="vertical-align:middle;">
@@ -22,6 +22,7 @@
 							</table>
 						</div>
 					</div>
+					<div class="pie-caja"></div>
 				</div>
 			</a>
 		</div>

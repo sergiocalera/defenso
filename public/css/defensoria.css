@@ -1,14 +1,16 @@
-.cuadro-derecho{
+.cuadro-menu{
 	height: 265px;
-	background-color: #FBEFF5;
-	margin-bottom: 30px;
+	background-color: #F6F6F6;
+	/*margin-bottom: 30px;*/
 	padding: 0 5%;
 }
 
 .titulo{
-	color: #A4A4A4;
+	color: #545454;
 	font-weight: bold;
-	font-size: 28px;
+	font-size: 16pt;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
 .cuerpo{
@@ -31,7 +33,7 @@
     position:relative;
 }
 .contenedor iframe,
-.contenedor .cuadro-derecho{
+.contenedor .cuadro-menu{
     position:absolute;
     height:100%;
     width:100%;
@@ -42,4 +44,15 @@
 table{
 	height: 100%;
 	width: 100%;
+}
+
+.pie-caja{
+    width: 100%;
+    height: 8px;
+    background-color: #4D92DF;
+    border: solid #F6F6F6;
+    border-left-width: 50px;
+    border-right-width: 50px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
 }

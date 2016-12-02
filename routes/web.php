@@ -23,7 +23,7 @@ Route::get('/formulario', 'DefensoriaController@formulario');
 Route::get('/normatividad', 'DefensoriaController@normatividad');
 Route::get('/foro', 'DefensoriaController@foro');
 Route::post('v', 'ServiciosController@v');
-// Route::post('/mensaje', 'MensajesController@nuevo');
+Route::post('/mensaje', 'MensajesController@nuevo');
 
 
 

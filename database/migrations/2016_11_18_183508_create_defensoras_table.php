@@ -23,6 +23,10 @@ class CreateDefensorasTable extends Migration
             $table->foreign('mensaje_id')
                 ->references('id')->on('mensajes')
                 ->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

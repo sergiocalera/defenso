@@ -10,4 +10,8 @@ class Aprobada extends Model
     {
         return $this->belongsTo('App\Mensaje');
     }
+
+    public function user(){
+    	return $this->belongsTo('App\User');	
+    }
 }
