@@ -55,7 +55,13 @@ class HomeController extends Controller
         $defensora->respuesta = $request->input('response');
         $defensora->fecha = $carbon->now();
         $defensora->estado = 1;
-        $mensaje->defensoras()->save($defensora);
+
+        $user_id = Auth::user()->id;
+        $user = User::find( $user_id );
+
+        $mensaje->defensoras()->save( $defensora );
+        $user->defensoras()->save( $defensora );
+
     }
 
     public function editarresponse( Request $request ){
@@ -64,7 +70,11 @@ class HomeController extends Controller
         $defensora->respuesta = $request->response;
         $defensora->fecha = $carbon->now();
         // $defensora->estado = 1;
-        $defensora->save();
+        // $defensora->save();
+
+        $user_id = Auth::user()->id;
+        $user = User::find( $user_id );
+        $user->defensoras()->save( $defensora );
     }
 
     public function borrarmensaje( Request $request ){
@@ -79,8 +89,9 @@ class HomeController extends Controller
         $mensaje->aprobado = true;
         $mensaje->save();
 
-        $user_ge = Auth::user();
-        $user_id = $user_ge->id;
+        // $user_ge = Auth::user();
+        // $user_id = $user_ge->id;
+        $user_id = Auth::user()->id;
         $user = User::find( $user_id );
 
         $aprobada = new Aprobada;
@@ -98,6 +109,10 @@ class HomeController extends Controller
     public function deleteresponse( Request $request ){
         $defensora = Defensora::find( $request->input('message') );
         $defensora->estado = 3;
-        $defensora->save();
+        // $defensora->save();
+
+        $user_id = Auth::user()->id;
+        $user = User::find( $user_id );
+        $user->defensoras()->save( $defensora );
     }
 }

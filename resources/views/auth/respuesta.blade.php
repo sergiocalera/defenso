@@ -135,7 +135,7 @@
                 </div>
 
 
-                {{-- Seccion del modal --}}
+                {{-- Seccion del modal nueva respuesta--}}
                 <div id="responseModal" class="modal fade bs-response-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 					<div class="modal-dialog modal-lg" role="document">
 						<div class="modal-content">
@@ -160,7 +160,8 @@
 									<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 										<form id="newResponse" action="">
 											<div class="form-group">
-												<textarea  name="response" id="boxResponse" rows="10" class="form-control" style="width: 100%"></textarea>
+												<textarea  name="response" id="boxResponse" rows="10" class="form-control caja-respuesta" onkeydown="longNuevaRespuesta()" onkeyup="longNuevaRespuesta()" style="width: 100%"></textarea>
+												<p class="text-right" style="margin-top: 1%;">Caracteres restantes: <spand id="total_caracteres">200</spand></p>
 												<input type="hidden" name="token_message" value="{{$mensaje->id}}">
 												{{csrf_field()}}
 											</div>
@@ -175,7 +176,7 @@
 						</div>
 					</div>
 				</div>
-				{{-- Fin de la seccion de modal --}}
+				{{-- Fin de la seccion de modal nueva respuesta --}}
 
 				{{-- Seccion del modal Editar Respuestas --}}
                 <div id="responseModalEdit" class="modal fade bs-edit-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -202,7 +203,8 @@
 									<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 										<form id="editResponse" action="">
 											<div class="form-group">
-												<textarea  name="response" id="boxResponseEdit" rows="10" class="form-control" style="width: 100%"></textarea>
+												<textarea  name="response" id="boxResponseEdit" rows="10" class="form-control" style="width: 100%" onkeydown="longEditarRespuesta()" onkeyup="longEditarRespuesta()"></textarea>
+												<p class="text-right" style="margin-top: 1%;">Caracteres restantes: <spand id="total_caracteres_respuesta">200</spand></p>
 												<input id="token_respuesta" type="hidden" name="token_respuesta" value="{{$mensaje->id}}">
 												{{csrf_field()}}
 											</div>
@@ -220,7 +222,7 @@
 				<form id="accionesBotones">
 					{{csrf_field()}}
 				</form>
-				{{-- Fin de la seccion de modal --}}
+				{{-- Fin de la seccion de modal Editar Respuesta --}}
 				@else
 				<div class="panel-body">
 					<div class="row">

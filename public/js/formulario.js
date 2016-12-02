@@ -79,17 +79,17 @@ var longitud = function(){
 
 	$('#total_caracteres').html( maximo_c - num_caracteres );
 	if( num_caracteres > maximo_c ){
-		$('#mmensaje').val( comentario_texto );
+		$('.caja-respuesta').val( comentario_texto );
 	} else{
-		comentario_texto = $('#mmensaje').val();
+		comentario_texto = $('.caja-respuesta').val();
 	}
 
 	if( num_caracteres >= maximo_c ){
-		$('#mmensaje').css('color', '#D0021B');
+		$('.caja-respuesta').css('color', '#D0021B');
 
 	}
 	else{
-		$('#mmensaje').css('color', '#545454');
+		$('.caja-respuesta').css('color', '#545454');
 	}
 
 }

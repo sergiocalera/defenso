@@ -102,3 +102,48 @@ var modalEditar = function(event){
 	$('#boxResponseEdit').val(mensaje);
 	$('#token_respuesta').attr('value', id);
 };
+
+var longNuevaRespuesta = function(){
+	var maximo_c = 200;
+	// var num_caracteres = document.forms[0].boxResponse.value.length;
+	var num_caracteres = document.forms[1].response.value.length;
+
+	$('#total_caracteres').html( maximo_c - num_caracteres );
+	if( num_caracteres > maximo_c ){
+		$('#mmensaje').val( comentario_texto );
+	} else{
+		comentario_texto = $('#mmensaje').val();
+	}
+
+	if( num_caracteres >= maximo_c ){
+		$('#mmensaje').css('color', '#D0021B');
+
+	}
+	else{
+		$('#mmensaje').css('color', '#545454');
+	}
+
+};
+
+var longEditarRespuesta = function(){
+	var maximo_c = 200;
+	// var num_caracteres = document.forms[0].boxResponse.value.length;
+	var num_caracteres = document.forms[2].response.value.length;
+	console.log("Accedio a esta funcion");
+
+	$('#total_caracteres_respuesta').html( maximo_c - num_caracteres );
+	if( num_caracteres > maximo_c ){
+		$('#mmensaje').val( comentario_texto );
+	} else{
+		comentario_texto = $('#mmensaje').val();
+	}
+
+	if( num_caracteres >= maximo_c ){
+		$('#mmensaje').css('color', '#D0021B');
+
+	}
+	else{
+		$('#mmensaje').css('color', '#545454');
+	}
+
+};
