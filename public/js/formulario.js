@@ -11,9 +11,10 @@ var validar = function( e, formulario ){
 	console.log( formulario.serializeArray() );
 	if( revisar( formulario ) ){
 		$elementos = formulario.serializeArray();
-		enviar( '/mensaje', 'html', $elementos, function( data ){
+		enviar( '/mensaje', 'html', $elementos, function( resp ){
 			console.log("Respuesta del servidor:");
-			console.log( data );
+			console.log( "Respuesta: " + resp );
+			$("#mensaje-servidor").append( resp );
 		});
 	} else{
 		console.log("no paso la validación");
@@ -28,7 +29,7 @@ var enviar = function($url, $dataType, $data, funcion){
 		dataType: $dataType,
 		data: $data,
 		success: function(data){
-			funcion();
+			funcion( data );
 		},
 		error: function(data){
 			console.log("Mensaje de error: ");

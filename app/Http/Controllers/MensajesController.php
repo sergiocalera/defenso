@@ -9,6 +9,8 @@ use App\Mensaje;
 class MensajesController extends Controller{
 
     public function nuevo(Request $request){
+
+        $opcion = false;
     	if($request->isMethod("post") && $request->has("correo")){
     		$au = new Audiencia;
     		$au->nombre = $request->nombre;
@@ -30,6 +32,12 @@ class MensajesController extends Controller{
     		$m->estado = true;
             $m->fecha = $carbon->now();
     		$au->mensajes()->save($m);
-    	}
+            $opcion = true;
+            // return "<div class='alert alert-success' role='alert'><p>Mensaje Enviado</p></div>";
+    	} else{
+            $opcion = false;
+        }
+
+        return view('viewFormulario.mensajes', ["opcion" => $opcion]);
     }
 }

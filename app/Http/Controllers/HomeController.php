@@ -89,8 +89,6 @@ class HomeController extends Controller
         $mensaje->aprobado = true;
         $mensaje->save();
 
-        // $user_ge = Auth::user();
-        // $user_id = $user_ge->id;
         $user_id = Auth::user()->id;
         $user = User::find( $user_id );
 
@@ -103,7 +101,11 @@ class HomeController extends Controller
     public function publishmessage( Request $request ){
         $defensora = Defensora::find( $request->input('message') );
         $defensora->estado = 2;
-        $defensora->save();
+        // $defensora->save();
+
+        $user_id = Auth::user()->id;
+        $user = User::find( $user_id );
+        $user->defensoras()->save( $defensora );
     }
 
     public function deleteresponse( Request $request ){
