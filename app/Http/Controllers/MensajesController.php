@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Audiencia;
 use App\Mensaje;
+use App\Correo\Correo;
 
 class MensajesController extends Controller{
 
@@ -33,6 +34,9 @@ class MensajesController extends Controller{
             $m->fecha = $carbon->now();
     		$au->mensajes()->save($m);
             $opcion = true;
+
+            $correo = new Correo();
+            $correo->enviarMensaje( 'Sistema de Defensoria', 'vin.cfs@tveducativa.gob.mx', $request->nombre . $request->apaterno, $request->correo, 1);
             // return "<div class='alert alert-success' role='alert'><p>Mensaje Enviado</p></div>";
     	} else{
             $opcion = false;

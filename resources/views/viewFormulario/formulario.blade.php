@@ -188,7 +188,7 @@
             <div id="mensaje" class="renglon"></div>
             {{csrf_field()}}
         </form>
-        <div id="mensaje-servidor" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="mensaje-servidor" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 10px;">
         
         </div>
     </div>
