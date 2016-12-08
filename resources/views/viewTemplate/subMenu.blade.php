@@ -1,3 +1,8 @@
+<?php
+use App\Nav;
+
+$navs = Nav::orderBy('posicion', 'asc')->get();
+?>
 <nav class="navbar navbar-inverse sub-navbar navbar-fixed-top">
    <div class="container">
       <div class="navbar-header">
@@ -10,12 +15,11 @@
       </div>
       <div class="collapse navbar-collapse" id="subenlaces">
          <ul class="nav navbar-nav navbar-right">
+            @foreach( $navs as $nav )
             <li>
-               <a href="{{ url('/') }}" target="_top">Inicio</a>
+               <a href="{{ url( $nav->url ) }}" target="_top">{{ $nav->titulo }}</a>
             </li>
-            <li >
-               <a href="{{ url('/foro') }}" target="_self">Foro Defensoría</a>
-            </li>
+            @endforeach
          </ul>
       </div>
    </div>
