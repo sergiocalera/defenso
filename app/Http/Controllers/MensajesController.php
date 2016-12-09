@@ -9,6 +9,12 @@ use App\Correo\Correo;
 
 class MensajesController extends Controller{
 
+    private $correo = null;
+
+    public function __construct(){
+        $this->correo = new Correo();
+    }
+
     public function nuevo(Request $request){
 
         $opcion = false;
@@ -35,8 +41,7 @@ class MensajesController extends Controller{
     		$au->mensajes()->save($m);
             $opcion = true;
 
-            $correo = new Correo();
-            $correo->enviarMensaje( 'Sistema de Defensoria', 'vin.cfs@tveducativa.gob.mx', $request->nombre . $request->apaterno, $request->correo, 1);
+            $this->correo->enviarMensajeDefensora( 'Sistema de Defensoria', 'vin.cfs@tveducativa.gob.mx', $request->nombre . " " . $request->apaterno, $request->correo, $m->id);
             // return "<div class='alert alert-success' role='alert'><p>Mensaje Enviado</p></div>";
     	} else{
             $opcion = false;
