@@ -33,6 +33,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/home/messages', 'HomeController@index' );
+
 Route::get('/home/response/{id?}', 'HomeController@response');
 
 Route::post('/home/newresponse', 'HomeController@newresponse');
@@ -46,3 +48,6 @@ Route::post('/home/approveresponse', 'HomeController@aprobarmensaje');
 Route::post('/home/publish', 'HomeController@publishmessage');
 
 Route::post('/home/deleteresponse', 'HomeController@deleteresponse');
+
+Route::get('/home/documents', 'Documents\DocumentsController@index');
+Route::get('/home/documents/new', 'Documents\DocumentsController@new');
