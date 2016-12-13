@@ -22,7 +22,7 @@
 								</table>
 							</div>
 							<div class="icono-aux">
-								<img src="{{ url( 'img/index/Ic_1.png' ) }}" alt="icono-seccion">
+								<img src="{{ url( 'img/index/Ic_6.png' ) }}" alt="icono-seccion">
 							</div>
 						</div>
 					</div>
@@ -42,7 +42,7 @@
 								</table>
 							</div>
 							<div class="icono-aux">
-								<img src="{{ url( 'img/index/Ic_1.png' ) }}" alt="icono-seccion">
+								<img src="{{ url( 'img/index/Ic_5.png' ) }}" alt="icono-seccion">
 							</div>
 						</div>
 					</div>

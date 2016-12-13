@@ -12,4 +12,8 @@ class Categories extends Model
      * @var string
      */
     protected $table = 'categories';
+
+    public function documents(){
+    	return $this->hasMany('App\Document');
+    }
 }
