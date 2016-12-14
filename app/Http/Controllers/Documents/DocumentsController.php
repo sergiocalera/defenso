@@ -22,9 +22,7 @@ class DocumentsController extends Controller
     }
 
     public function index(){
-        // $documentos = Document::where('active','=','1')->get();
         $categorias = Categories::get();
-        // return view('documents/index', ['documentos' => $documentos]);
     	return view('documents/index', ['categorias' => $categorias]);
     }
 
@@ -37,19 +35,18 @@ class DocumentsController extends Controller
         $categoria = $request->input('categorie_document');
         $titulo = $request->input('title_document');
         $archivos = $request->file('file_document');
+        $date = $request->input('date_document');
 
         $categoria = Categories::find( $categoria );
-        $carbon = new \Carbon\Carbon();
 
         if(!empty($archivos)){
             foreach ($archivos as $archivo) {
-                // Storage::put($archivo->getClientOriginalName(), file_get_contents($archivo));
                 $archivo->move( "docs/documents", $archivo->getClientOriginalName() );
 
                 $doc = new Document();
                 $doc->file = $archivo->getClientOriginalName();
                 $doc->title = $titulo;
-                $doc->date = $carbon->now();
+                $doc->date = ($date != null) ? $date : "";
                 $doc->active = true;
 
                 $user_id = Auth::user()->id;
@@ -66,9 +63,11 @@ class DocumentsController extends Controller
 
     public function delete($id){
         if( is_int( (int) $id) ){
-            $doc = Document::find($id);
-            $doc->active = false;
-            $doc->save();
+            $doc = Document::find( $id );
+            if( unlink('docs/documents/' . $doc->file) ){
+                $doc->active = false;
+                $doc->save();
+            }
         }
         return redirect('home/documents');
     }

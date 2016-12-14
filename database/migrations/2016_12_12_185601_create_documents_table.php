@@ -17,7 +17,7 @@ class CreateDocumentsTable extends Migration
             $table->increments('id');
             $table->string('file');
             $table->string('title');
-            $table->date('date');
+            $table->string('date');
             $table->boolean('active');
             $table->integer('categories_id')->unsigned();
             $table->foreign('categories_id')

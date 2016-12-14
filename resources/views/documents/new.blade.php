@@ -25,7 +25,15 @@
 					Título del documento:
 				</label>
 				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-					<input type="text" name="title_document" placeholder="Título del documento" class="form-control" style="width: 100%;">
+					<input type="text" name="title_document" placeholder="Título del documento" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="date_document" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label text-right">
+					Fecha: 
+				</label>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<input type="text" name="date_document" placeholder="Fecha para el documento" class="form-control">
 				</div>
 			</div>
 			<div class="form-group">

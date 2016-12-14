@@ -22,6 +22,8 @@ Route::get('/defensora' , 'DefensoriaController@defensora');
 Route::get('/formulario', 'DefensoriaController@formulario');
 Route::get('/normatividad', 'DefensoriaController@normatividad');
 Route::get('/foro', 'DefensoriaController@foro');
+Route::get('/interes/agenda', 'DefensoriaController@agenda');
+Route::get('/interes/documentos', 'DefensoriaController@documentos');
 Route::post('v', 'ServiciosController@v');
 Route::post('/mensaje', 'MensajesController@nuevo');
 
@@ -49,6 +51,8 @@ Route::post('/home/publish', 'HomeController@publishmessage');
 
 Route::post('/home/deleteresponse', 'HomeController@deleteresponse');
 
+
+/* *******************  Seccion para el tratamiento de documentos  ******************* */
 Route::get('/home/documents', 'Documents\DocumentsController@index');
 Route::get('/home/documents/new', 'Documents\DocumentsController@new');
 Route::post('/home/documents/upload', 'Documents\DocumentsController@upload');
