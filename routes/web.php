@@ -52,3 +52,4 @@ Route::post('/home/deleteresponse', 'HomeController@deleteresponse');
 Route::get('/home/documents', 'Documents\DocumentsController@index');
 Route::get('/home/documents/new', 'Documents\DocumentsController@new');
 Route::post('/home/documents/upload', 'Documents\DocumentsController@upload');
+Route::get('/home/documents/delete/{id?}', 'Documents\DocumentsController@delete');

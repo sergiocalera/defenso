@@ -22,8 +22,10 @@ class DocumentsController extends Controller
     }
 
     public function index(){
-        $documentos = Document::get();
-    	return view('documents/index', ['documentos' => $documentos]);
+        // $documentos = Document::where('active','=','1')->get();
+        $categorias = Categories::get();
+        // return view('documents/index', ['documentos' => $documentos]);
+    	return view('documents/index', ['categorias' => $categorias]);
     }
 
     public function new(){
@@ -48,6 +50,7 @@ class DocumentsController extends Controller
                 $doc->file = $archivo->getClientOriginalName();
                 $doc->title = $titulo;
                 $doc->date = $carbon->now();
+                $doc->active = true;
 
                 $user_id = Auth::user()->id;
                 $user = User::find( $user_id );
@@ -58,6 +61,15 @@ class DocumentsController extends Controller
             }
         }
 
+        return redirect('home/documents');
+    }
+
+    public function delete($id){
+        if( is_int( (int) $id) ){
+            $doc = Document::find($id);
+            $doc->active = false;
+            $doc->save();
+        }
         return redirect('home/documents');
     }
 }
