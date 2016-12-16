@@ -21,8 +21,8 @@ class Correo{
 		$data = ['name_to' => $name_to];
 		$user = ['email_to' => $email_to, 'name_to' => $name_to, 'name_from' => $name_from, 'email_from' => $email_from];
 	
-		Mail::send(['html'=>'viewCorreo.defensora'], $data, function( $message ) use ($user){
-			$message->to( $user['email_to'], $user['name_to'] )->subject('Tienes un nuevo comentario');
+		Mail::send(['html'=>'viewCorreo.response'], $data, function( $message ) use ($user){
+			$message->to( $user['email_to'], $user['name_to'] )->subject('Contestaci&oacute;n a tu comentario');
 			$message->from( $user['email_from'], $user['name_from'] );
 		});
 	}

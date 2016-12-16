@@ -114,7 +114,7 @@ class HomeController extends Controller
         $correo = $defensora->mensaje->audiencia->email;
         $nombre_completo = $audiencia . ' ' . $apellido;
 
-        $this->correo->enviarMensajeAudiencia($nombre_completo, $correo, faltan mas datos aqui...);
+        $this->correo->enviarMensajeAudiencia($nombre_completo, $correo, 'Sistema de Defensoria', 'vin.cfs@tveducativa.gob.mx');
     }
 
     public function deleteresponse( Request $request ){
