@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Aprobada;
 use App\Seccion;
 use App\Categories;
+use App\Diary;
 
 class DefensoriaController extends Controller
 {
@@ -58,7 +59,7 @@ class DefensoriaController extends Controller
     }
 
     public function agenda(){
-
-        return view('viewAgenda/index');
+        $diaries = Diary::get();
+        return view('viewAgenda/index', ['diaries' => $diaries] );
     }
 }

@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<h3>Documentos</h3>
+			<h3>Control de Documentos</h3>
 		</div>
 	</div>
 	<div class="row">
@@ -17,6 +17,7 @@
 		@if( !$categoria->documents->isEmpty() )
 		<?php $documentos = $categoria->documents->where('active','!=', "0"); ?>
 		@if( !$documentos->isEmpty() )
+		<?php $contador = 0;?>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading text-center">
@@ -24,14 +25,14 @@
 				</div>
 				<table class="table">
 					<tr>
-						<td>#</td>
-						<td>Título</td>
-						<td>Documento</td>
-						<td>Control</td>
+						<td style="width: 5%;">#</td>
+						<td style="width: 55%;">Título</td>
+						<td style="width: 35%;">Documento</td>
+						<td style="width: 5%;">Control</td>
 					</tr>
 					@foreach( $documentos as $documento)
 					<tr>
-						<td>#</td>
+						<td>{{ ++$contador }}</td>
 						<td>{{ $documento->title }}</td>
 						<td><a href="{{ url('/docs/documents/' . $documento->file) }}" target="_new">{{ $documento->file }}</a></td>
 						<td class="text-right"><a href="{{ url('/home/documents/delete/' . $documento->id) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Borrar</a></td>

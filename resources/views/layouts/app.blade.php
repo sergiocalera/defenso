@@ -55,7 +55,8 @@
                             <li><a href="{{ url('/login') }}">Autentificar</a></li>
                             {{--<li><a href="{{ url('/register') }}">Register</a></li>--}}
                         @else
-                            <li><a href="{{ url('/home') }}">Mensajes</a></li>
+                            <li><a href="{{ url('/home/messages') }}">Mensajes</a></li>
+                            <li><a href="{{ url('/home/diary') }}">Agenda</a></li>
                             <li><a href="{{ url('/home/documents') }}">Documentos</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

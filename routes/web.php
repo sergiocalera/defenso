@@ -22,10 +22,10 @@ Route::get('/defensora' , 'DefensoriaController@defensora');
 Route::get('/formulario', 'DefensoriaController@formulario');
 Route::get('/normatividad', 'DefensoriaController@normatividad');
 Route::get('/foro', 'DefensoriaController@foro');
-Route::get('/interes/agenda', 'DefensoriaController@agenda');
-Route::get('/interes/documentos', 'DefensoriaController@documentos');
 Route::post('v', 'ServiciosController@v');
 Route::post('/mensaje', 'MensajesController@nuevo');
+Route::get('/interes/agenda', 'DefensoriaController@agenda');
+Route::get('/interes/documentos', 'DefensoriaController@documentos');
 
 
 
@@ -57,3 +57,12 @@ Route::get('/home/documents', 'Documents\DocumentsController@index');
 Route::get('/home/documents/new', 'Documents\DocumentsController@new');
 Route::post('/home/documents/upload', 'Documents\DocumentsController@upload');
 Route::get('/home/documents/delete/{id?}', 'Documents\DocumentsController@delete');
+
+
+/* *******************  Seccion para el tratamiento de agenda  ******************* */
+Route::get('/home/diary', 'Agenda\AgendaController@index');
+Route::get('/home/diary/new', 'Agenda\AgendaController@new');
+Route::post('/home/diary/add', 'Agenda\AgendaController@add');
+Route::get('/home/diary/delete/{id?}', 'Agenda\AgendaController@delete');
+Route::get('/home/diary/edit/{id?}', 'Agenda\AgendaController@edit');
+Route::post('/home/diary/upload', 'Agenda\AgendaController@upload');
