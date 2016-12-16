@@ -7,6 +7,7 @@ use App\Mensaje;
 use App\Defensora;
 use App\Aprobada;
 use App\User;
+use App\Correo\Correo;
 
 use Auth;
 
@@ -20,6 +21,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->correo = new Correo();
     }
 
     /**
@@ -106,6 +108,13 @@ class HomeController extends Controller
         $user_id = Auth::user()->id;
         $user = User::find( $user_id );
         $user->defensoras()->save( $defensora );
+
+        $audiencia = $defensora->mensaje->audiencia->nombre;
+        $apellido = $defensora->mensaje->audiencia->apellido_paterno;
+        $correo = $defensora->mensaje->audiencia->email;
+        $nombre_completo = $audiencia . ' ' . $apellido;
+
+        $this->correo->enviarMensajeAudiencia($nombre_completo, $correo, faltan mas datos aqui...);
     }
 
     public function deleteresponse( Request $request ){
