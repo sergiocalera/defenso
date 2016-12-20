@@ -103,7 +103,6 @@ class HomeController extends Controller
     public function publishmessage( Request $request ){
         $defensora = Defensora::find( $request->input('message') );
         $defensora->estado = 2;
-        // $defensora->save();
 
         $user_id = Auth::user()->id;
         $user = User::find( $user_id );
