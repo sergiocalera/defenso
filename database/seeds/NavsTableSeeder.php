@@ -22,7 +22,7 @@ class NavsTableSeeder extends Seeder
         	'posicion' => 4,
         	'nombre' => 'formulario',
         	'titulo' => 'Formulario',
-        	'url' => '/formulario'
+        	'url' => '/comunicate#form-data'
     	]);
 
     	DB::table('navs')->insert([

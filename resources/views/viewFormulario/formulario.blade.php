@@ -7,10 +7,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container-fluid">
                 <p class="text-justify">
-                    Los datos marcados como obligatorios, con un asterisco, son necesarios para poder entrar en contacto con usted. Sin embargo lo invitamos a llenar todas las casillas, as&iacute; usted nos brinda informaci&oacute;n valiosa para construir el perfil de nuestras audiencias. Una vez que termine de llenar las variables, no olvide darle clic al bot&oacute;n <strong>Enviar</strong>.
-                </p>
-                <p>
-                    *Los campos con (<spand style="color: #D0021B;">*</spand>) son obligatorios.
+                    Los datos marcados como obligatorios, con un asterisco (<spand style="color: #D0021B;">*</spand>), son necesarios para poder entrar en contacto con usted. Sin embargo lo invitamos a llenar todas las casillas, as&iacute; usted nos brinda informaci&oacute;n valiosa para construir el perfil de nuestras audiencias. Una vez que termine de llenar las variables, no olvide darle clic al bot&oacute;n <strong>Enviar</strong>.
                 </p>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group" id="form-nombre">
@@ -149,22 +146,22 @@
                         <label class="control-label" for="motivoMensaje">Motivo del mensaje</label>
                     </p>
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <input type="radio" name="motivo[]" id="felicitaci&oacute;n" value="Felicitaci&oacute;n"/> Felicitaci&oacute;n
+                        <input type="radio" name="motivo[]" id="sugerencia" value="Sugerencia"/> Sugerencia
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <input type="radio" name="motivo[]" id="comentario" value="Comentario" /> Comentario
+                        <input type="radio" name="motivo[]" id="queja" value="Queja" /> Queja
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <input type="radio" name="motivo[]" id="sugerencia" value="Sugerencia" /> Sugerencia
+                        <input type="radio" name="motivo[]" id="peticion" value="Petici&oacute;n" /> Petici&oacute;n
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <input type="radio" name="motivo[]" id="queja" value="Queja"/> Queja
+                        <input type="radio" name="motivo[]" id="opinion" value="Opini&oacute;n"/> Opini&oacute;n
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <input type="radio" name="motivo[]" id="pregunta" value="Pregunta o duda" /> Pregunta o duda
+                        <input type="radio" name="motivo[]" id="felicitacion" value="Felicitaci&oacute;n" /> Felicitaci&oacute;n
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <input type="radio" name="motivo[]" id="respuesta" value="Respuesta" /> Respuesta
+                        <input type="radio" name="motivo[]" id="Consulta" value="Consulta" /> Consulta
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 renglon">

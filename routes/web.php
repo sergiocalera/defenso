@@ -19,7 +19,7 @@ Route::get('/', 'DefensoriaController@index');
 Route::get('/defensoria', 'DefensoriaController@defensoria');
 Route::get('/derechos', 'DefensoriaController@derechos');
 Route::get('/defensora' , 'DefensoriaController@defensora');
-Route::get('/formulario', 'DefensoriaController@formulario');
+Route::get('/comunicate', 'DefensoriaController@formulario');
 Route::get('/normatividad', 'DefensoriaController@normatividad');
 Route::get('/foro', 'DefensoriaController@foro');
 Route::post('v', 'ServiciosController@v');

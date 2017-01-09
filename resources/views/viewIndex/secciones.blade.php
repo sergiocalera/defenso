@@ -101,20 +101,20 @@
 				</a>
 			</div>
 			<div class="row">
-				<a href="{{ url('/formulario') }}">
+				<a href="{{ url('/comunicate') }}">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="marco-derecho">
 							<div class="texto">
 								<table>
 									<tr>
 										<td style="vertical-align: middle;">
-											<p class="text-center">Formulario</p>
+											<p class="text-center">Comunicate</p>
 										</td>
 									</tr>
 								</table>
 							</div>
 							<div class="icono-seccion">
-								<img src="{{ url( 'img/index/Ic_2.png' ) }}" alt="icono-seccion">
+								<img src="{{ url( 'img/index/Ic_7.png' ) }}" alt="icono-seccion">
 							</div>
 						</div>
 					</div>

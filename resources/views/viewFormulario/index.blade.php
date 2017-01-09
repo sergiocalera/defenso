@@ -7,11 +7,11 @@
 @section('bodyTemplate')
 @include('viewFormulario.banner')
 @include('viewFormulario.acerca')
-@include('viewFormulario.formulario')
 @include('viewForo.foro')
 @include('viewForo.paginacion')
 @include('viewFormulario.contenido')
 @include('viewFormulario.criterios')
+@include('viewFormulario.formulario')
 @endsection
 
 @section('footerTemplate')

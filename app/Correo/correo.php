@@ -17,8 +17,8 @@ class Correo{
 		});
 	}
 
-	public function enviarMensajeAudiencia( $name_to, $email_to, $name_from, $email_from ){
-		$data = ['name_to' => $name_to, 'email_to' => $email_to];
+	public function enviarMensajeAudiencia( $name_to, $email_to, $name_from, $email_from, $response ){
+		$data = ['name_to' => $name_to, 'email_to' => $email_to, 'response' => $response];
 		$user = ['email_to' => $email_to, 'name_to' => $name_to, 'name_from' => $name_from, 'email_from' => $email_from];
 	
 		Mail::send(['html'=>'viewCorreo.response'], $data, function( $message ) use ($user){
