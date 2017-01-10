@@ -11,6 +11,7 @@
 @include('viewFormulario.contenido')
 @include('viewFormulario.criterios')
 @include('viewFormulario.formulario')
+@include('viewFormulario.contacto')
 @endsection
 
 @section('footerTemplate')
