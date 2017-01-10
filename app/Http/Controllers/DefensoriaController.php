@@ -11,8 +11,9 @@ use App\Diary;
 class DefensoriaController extends Controller
 {
     public function index(){
-        $secciones = Seccion::orderBy('posicion', 'asc')->get();
-        return view('viewIndex/index', [ 'secciones' => $secciones ]);
+        // $secciones = Seccion::orderBy('posicion', 'asc')->get();
+        // return view('viewIndex/index', [ 'secciones' => $secciones ]);
+        return view('viewIndex/index');
     }
 
     public function defensoria(){
@@ -28,8 +29,10 @@ class DefensoriaController extends Controller
     }
 
     public function formulario(){
-        $aprobadas = Aprobada::orderBy('id', 'desc')->paginate(4);
-        return view('viewFormulario.index', ['aprobadas' => $aprobadas]);
+        /* Esta seccion es la que hay que modificar */
+        //$aprobadas = Aprobada::orderBy('id', 'desc')->paginate(4);
+        //return view('viewFormulario.index', ['aprobadas' => $aprobadas]);
+        return view('viewFormulario.index');
     }
 
     public function normatividad(){
@@ -47,6 +50,7 @@ class DefensoriaController extends Controller
     }
 
     public function foro(){
+        /* Esta seccion sera dedicada al foro */
     	$aprobadas = Aprobada::orderBy('id', 'desc')->paginate(15);
         return view('viewForo/index', ['aprobadas' => $aprobadas]);
     }

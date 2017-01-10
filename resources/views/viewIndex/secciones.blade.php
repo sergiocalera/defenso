@@ -48,6 +48,26 @@
 					</div>
 				</a>
 			</div>
+			<div class="row">
+				<a href="{{ url('/que-dice-audiencia') }}">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="marco-derecho">
+							<div class="texto">
+								<table>
+									<tr>
+										<td style="vertical-align: middle;">
+											<p class="text-center">¿Qué dice la audiencia?</p>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="icono-aux">
+								<img src="{{ url( 'img/index/Ic_5.png' ) }}" alt="icono-seccion">
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
 		</div>
 		<div class="hidden-xs hidden-sm col-md-6 col-lg-6">
 			<div class="row">
@@ -71,6 +91,19 @@
 								<tr>
 									<td style="vertical-align: middle;">
 										<p class="text-center">¿Qué es la Defensoría de las Audiencias?</p>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</a>
+				<a href="{{ url('/que-dice-audiencia') }}">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div id="tercer-marco" class="marco-izquierdo">
+							<table>
+								<tr>
+									<td style="vertical-align: middle;">
+										<p class="text-center">¿Qué dice la audiencia?</p>
 									</td>
 								</tr>
 							</table>
@@ -108,7 +141,7 @@
 								<table>
 									<tr>
 										<td style="vertical-align: middle;">
-											<p class="text-center">Comunicate</p>
+											<p class="text-center">Comunícate</p>
 										</td>
 									</tr>
 								</table>

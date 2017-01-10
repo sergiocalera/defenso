@@ -7,8 +7,7 @@
 @section('bodyTemplate')
 @include('viewFormulario.banner')
 @include('viewFormulario.acerca')
-@include('viewForo.foro')
-@include('viewForo.paginacion')
+{{--@include('viewForo.paginacion')--}}
 @include('viewFormulario.contenido')
 @include('viewFormulario.criterios')
 @include('viewFormulario.formulario')

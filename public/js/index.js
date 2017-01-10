@@ -19,7 +19,8 @@ var ajusteCuadro = function(){
 
 var ajusteColumna = function(){
 	var alto = $('#col-derecha').height();
-	var altoCuadro = (alto - 52) / 3;
+	var altoCuadro = (alto - 78) / 3;
 	$('#primer-marco').height( altoCuadro );
-	$('#segundo-marco').height( altoCuadro * 2 );
+	$('#segundo-marco').height( altoCuadro );
+	$('#tercer-marco').height( altoCuadro );
 };
