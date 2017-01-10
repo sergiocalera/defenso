@@ -41,7 +41,20 @@ class MensajesController extends Controller{
     		$au->mensajes()->save($m);
             $opcion = true;
 
-            $this->correo->enviarMensajeDefensora( 'Sistema de Defensoria', 'defensoria@tveducativa.gob.mx', $request->nombre . " " . $request->apaterno, $request->correo, $m->id);
+            $datos = collect([
+                    'Nombre'            => $au->nombre,
+                    'Apellido Paterno'  => $au->apellido_paterno,
+                    'Apellido Materno'  => $au->apellido_materno,
+                    'Edad'              => $au->edad,
+                    'Ocupacion'         => $au->ocupacion,
+                    'Correo'            => $au->email,
+                    'País'              => $au->pais,
+                    'Estado'            => $au->estado,
+                    'Municipio'         => $au->municipio,
+                    'Mensaje'           => $m->mensaje
+                ]);
+
+            $this->correo->enviarMensajeDefensora( 'Sistema de Defensoria', 'defensoria@tveducativa.gob.mx', $request->nombre . " " . $request->apaterno, $request->correo, $m->id, $datos);
             return "<div class='alert alert-success' role='alert'><p>Mensaje Enviado</p></div>";
     	} else{
             $opcion = false;

@@ -51,7 +51,7 @@ class DefensoriaController extends Controller
 
     public function foro(){
         /* Esta seccion sera dedicada al foro */
-    	$aprobadas = Aprobada::orderBy('id', 'desc')->paginate(15);
+    	$aprobadas = Aprobada::orderBy('id', 'desc')->paginate(10);
         return view('viewForo/index', ['aprobadas' => $aprobadas]);
     }
 

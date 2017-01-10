@@ -6,9 +6,9 @@ use Mail;
 
 class Correo{
 
-	public function enviarMensajeDefensora( $name_to, $email_to, $name_from, $email_from,  $id ){
+	public function enviarMensajeDefensora( $name_to, $email_to, $name_from, $email_from,  $id, $request ){
 
-		$data=['name_to' => $name_to, 'id' => $id];
+		$data=[ 'name_to' => $name_to, 'id' => $id, 'request' => $request ];
 		$user = ['email_to' => $email_to, 'name_to' => $name_to, 'name_from' => $name_from, 'email_from' => $email_from];
 		
 		Mail::send(['html'=>'viewCorreo.defensora'], $data, function( $message ) use ($user){
