@@ -2,7 +2,7 @@
 <section id="secciones">
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<h3>Secciones de la Defensoría de Audiencia</h3>
+			<h3>Defensoría de Audiencia</h3>
 			<hr class="red" />
 		</div>
 	</div>
@@ -62,7 +62,7 @@
 								</table>
 							</div>
 							<div class="icono-aux">
-								<img src="{{ url( 'img/index/Ic_5.png' ) }}" alt="icono-seccion">
+								<img src="{{ url( 'img/index/Ic_8.png' ) }}" alt="icono-seccion">
 							</div>
 						</div>
 					</div>
