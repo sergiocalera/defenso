@@ -21,7 +21,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->correo = new Correo();
+        // $this->correo = new Correo();
     }
 
     /**
@@ -114,7 +114,7 @@ class HomeController extends Controller
         $correo = $defensora->mensaje->audiencia->email;
         $nombre_completo = $audiencia . ' ' . $apellido;
 
-        $this->correo->enviarMensajeAudiencia($nombre_completo, $correo, 'Sistema de Defensoria', 'defensoria@tveducativa.gob.mx', $respuesta);
+        // $this->correo->enviarMensajeAudiencia($nombre_completo, $correo, 'Sistema de Defensoria', 'defensoria@tveducativa.gob.mx', $respuesta);
     }
 
     public function deleteresponse( Request $request ){

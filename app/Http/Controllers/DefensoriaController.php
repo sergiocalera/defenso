@@ -37,6 +37,8 @@ class DefensoriaController extends Controller
 
     public function normatividad(){
         $documents = collect([
+            ['name' => 'Código de Ética de la Dirección General de Televisión Educativa',
+            'url' => '/docs/normatividad/codigo_de_etica_DGTVE.pdf'],
             ['name' => 'Lineamientos Generales sobre los Derechos de las Audiencias.', 
              'url' => '/docs/normatividad/lineamientos_derechos_audiencias.pdf'],
             ['name' => 'Lineamientos de Clasificación de Contenidos Audiovisuales de las Transmisiones Radiodifundidas y del Servicio de Televisión y Audio Restringidos.',

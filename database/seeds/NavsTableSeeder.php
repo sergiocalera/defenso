@@ -27,9 +27,9 @@ class NavsTableSeeder extends Seeder
 
     	DB::table('navs')->insert([
         	'posicion' => 5,
-        	'nombre' => 'normatividad',
-        	'titulo' => 'Normatividad',
-        	'url' => '/normatividad'
+        	'nombre' => 'informes',
+        	'titulo' => 'Informes',
+        	'url' => '/'
     	]);
 
     }
