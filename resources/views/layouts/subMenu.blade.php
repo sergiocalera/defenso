@@ -5,7 +5,8 @@
          <span class="sr-only">Interruptor de Navegación</span>
          <span class="submenu">Submenú</span>
          </button>
-         <a class="navbar-brand" href="#">
+         <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="{{ url( '/img/logoDef.png' ) }}" alt="Logo defensoria">
          </a>
       </div>
       <div class="collapse navbar-collapse" id="subenlaces">
