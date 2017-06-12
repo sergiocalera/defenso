@@ -36,6 +36,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/home/messages', 'HomeController@index' );
+Route::get('/home/messages/add', 'HomeController@addMensaje');
 
 Route::get('/home/response/{id?}', 'HomeController@response');
 

@@ -126,4 +126,10 @@ class HomeController extends Controller
         $user = User::find( $user_id );
         $user->defensoras()->save( $defensora );
     }
+
+    public function addMensaje(){
+
+        //return "Hola mundo desde agregar Mensajes nuevos al sistema ! XD";
+        return view('auth.add');
+    }
 }
