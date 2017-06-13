@@ -24,6 +24,7 @@ Route::get('/normatividad', 'DefensoriaController@normatividad');
 Route::get('/que-dice-audiencia', 'DefensoriaController@foro');
 Route::post('v', 'ServiciosController@v');
 Route::post('/mensaje', 'MensajesController@nuevo');
+Route::post('/mensaje-consola', 'MensajesController@nuevoConsola');
 Route::get('/interes/agenda', 'DefensoriaController@agenda');
 Route::get('/interes/documentos', 'DefensoriaController@documentos');
 

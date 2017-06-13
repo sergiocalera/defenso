@@ -8,7 +8,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<form action="/home/diary/add" method="post" class="form-horizontal">
+		<form id="form-data" name="form-data" action="{{ url('/mensaje-consola') }}" method="post" class="form-horizontal">
 			<div class="form-group">
 				<label for="name_message" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Nombre: </label>
 				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -36,7 +36,7 @@
 			<div class="form-group">
 				<label for="occupation-event" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Ocupación: </label>
 				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-					<select class="form-control" id="ocupacion" name="occupation-event">
+					<select class="form-control" id="ocupacion" name="occupation_message">
                             <option selected value="">Selecciona una opci&oacute;n</option>
                             <option value="Otro">Otro</option>
                             <option value="Abogado">Abogado</option>

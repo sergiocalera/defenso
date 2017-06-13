@@ -54,12 +54,39 @@ class MensajesController extends Controller{
                     'Mensaje'           => $m->mensaje
                 ]);
 
-            $this->correo->enviarMensajeDefensora( 'Sistema de Defensoria', 'defensoria@tveducativa.gob.mx', $request->nombre . " " . $request->apaterno, $request->correo, $m->id, $datos);
+            $this->correo->enviarMensajeDefensora( 'Sistema de Defensoria', 'vin.cfs@tveducativa.gob.mx', $request->nombre . " " . $request->apaterno, $request->correo, $m->id, $datos);
             return "<div class='alert alert-success' role='alert'><p>Mensaje Enviado</p></div>";
     	} else{
             $opcion = false;
         }
 
         return view('viewFormulario.mensajes', ["opcion" => $opcion]);
+    }
+
+    public function nuevoConsola( Request $request ){
+
+        // if($request->isMethod("post") && $request->has("correo")){
+            $au = new Audiencia;
+            $au->nombre = $request->name_message;
+            $au->apellido_paterno = $request->last_name_message;
+            $au->apellido_materno = $request->last_segund_name_message;
+            $au->edad = $request->age_message;
+            $au->ocupacion = $request->occupation_message;
+            $au->pais = $request->country_message;
+            $au->estado = $request->city_messajes;
+            $au->municipio = $request->municipio_message;
+            $au->email = $request->email_mssage;
+            $au->save();
+
+            $carbon = new \Carbon\Carbon();
+            $m = new Mensaje;
+            $m->mensaje = $request->txt_message;
+            $m->publico = ($request->anonimo == "si") ? true : false;
+            $m->motivo_mensaje = ($request->motivo[0] == null ) ? "Comentario" : $request->motivo[0];
+            $m->estado = true;
+            $m->fecha = $carbon->now();
+            $au->mensajes()->save($m);
+        // }
+        return redirect('home/');
     }
 }
