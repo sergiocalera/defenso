@@ -56,6 +56,7 @@
                             {{--<li><a href="{{ url('/register') }}">Register</a></li>--}}
                         @else
                             <li><a href="{{ url('/home/messages') }}">Mensajes</a></li>
+                            <li><a href="{{ url('/home/messages/add') }}">Agregar Mensaje</a></li>
                             <li><a href="{{ url('/home/diary') }}">Agenda</a></li>
                             <li><a href="{{ url('/home/documents') }}">Documentos</a></li>
                             <li class="dropdown">
